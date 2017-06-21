@@ -16,5 +16,11 @@ namespace SchoolManagement.Views
         {
             InitializeComponent();
         }
+
+        private void studentTableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StudentTableViewForm stvf = new StudentTableViewForm();
+            stvf.Show();
+        }
     }
 }
