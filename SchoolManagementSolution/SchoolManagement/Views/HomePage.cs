@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SchoolManagement
+namespace SchoolManagement.Views
 {
-    public partial class LoginForm : Form
+    public partial class HomePage : Form
     {
-        public LoginForm()
+        public HomePage()
         {
             InitializeComponent();
         }
