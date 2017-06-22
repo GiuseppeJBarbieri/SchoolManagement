@@ -13,32 +13,26 @@ namespace SchoolManagement.Controller
 {
     class SchoolServerController
     {
-        public void LoginVerification(object loginobj)
+        //1-define delegate
+        //2-define an event based on that delegate
+        //3 raise the event
+
+        public delegate void VerifyLoginHandler(object source, Object acc);
+
+        public event VerifyLoginHandler LoginHandled;
+
+        public void VerifyLogin(Object acc)
         {
-            LoginObject acc = (LoginObject)loginobj;
+            MessageBox.Show("Verifying Credentials");
+            OnLoginHandled(acc);
+        }
 
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Giuseppe\\Documents\\SchoolManagement\\SchoolManagementSolution\\SchoolManagement\\SchoolDatabase.mdf;Integrated Security=True";
-            con.Open();
-
-            SqlCommand cmd = new SqlCommand("select UserName,Password from LoginInformation where UserName='" + acc.username + "'and Password='" + acc.password + "'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
+        protected virtual void OnLoginHandled(Object acc)
+        {
+            if(LoginHandled != null)
             {
-                MessageBox.Show("Login sucess Welcome to Homepage ");
-                HomePage hp = new HomePage();
-                LoginForm.ActiveForm.Hide();
-                hp.Show();
-                
+                LoginHandled(this, acc);
             }
-            else
-            {
-                MessageBox.Show("Invalid Login please check username and password");
-            }
-            con.Close();
-           
         }
     }
 }

@@ -12,8 +12,12 @@ using System.Windows.Forms;
 
 namespace SchoolManagement
 {
+    
     public partial class LoginForm : Form
     {
+        private SchoolServerController server;
+        private LoginService loginService;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -23,13 +27,18 @@ namespace SchoolManagement
         {
             // TODO: This line of code loads data into the 'schoolDatabaseDataSet.LoginInformation' table. You can move, or remove it, as needed.
             this.loginInformationTableAdapter.Fill(this.schoolDatabaseDataSet.LoginInformation);
+            server = new SchoolServerController();
+            loginService = new LoginService();
+
+            server.LoginHandled += loginService.OnLoginHandled;
             
         }
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            SchoolServerController server = new SchoolServerController();
-            server.LoginVerification(new LoginObject(usernameTxt.Text, passwordTxt.Text));
+            server.VerifyLogin(new LoginObject(usernameTxt.Text, passwordTxt.Text));
         }
+
+       
     }
 }
