@@ -54,6 +54,7 @@ namespace SchoolManagement.Model
             using (MemoryStream ms = new MemoryStream())
             {
                 BinaryWriter bw = new BinaryWriter(ms);
+                bw.Write("login");
                 bw.Write(username);
                 bw.Write(password);
 
