@@ -62,7 +62,7 @@
   <ItemGroup>
     <Compile Include="Controller\SchoolServerController.cs" />
     <Compile Include="Model\LoginObject.cs" />
-    <Compile Include="Model\LoginService.cs" />
+    <Compile Include="Controller\LoginService.cs" />
     <Compile Include="SchoolDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -23,5 +23,11 @@ namespace SchoolManagement.Views
             this.studentTableTableAdapter.Fill(this.schoolDatabaseDataSet.StudentTable);
 
         }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            HomePage hp = new HomePage();
+            hp.Show();
+        }
     }
 }
