@@ -22,5 +22,12 @@ namespace SchoolManagement.Views
             StudentTableViewForm stvf = new StudentTableViewForm();
             stvf.Show();
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm lf = new LoginForm();
+            lf.Show();
+        }
     }
 }

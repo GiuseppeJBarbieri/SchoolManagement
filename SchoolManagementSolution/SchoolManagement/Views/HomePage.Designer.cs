@@ -30,11 +30,11 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facultyTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +58,13 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
@@ -76,21 +83,15 @@
             // studentTableToolStripMenuItem
             // 
             this.studentTableToolStripMenuItem.Name = "studentTableToolStripMenuItem";
-            this.studentTableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.studentTableToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.studentTableToolStripMenuItem.Text = "Student Table";
             this.studentTableToolStripMenuItem.Click += new System.EventHandler(this.studentTableToolStripMenuItem_Click);
             // 
             // facultyTableToolStripMenuItem
             // 
             this.facultyTableToolStripMenuItem.Name = "facultyTableToolStripMenuItem";
-            this.facultyTableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.facultyTableToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.facultyTableToolStripMenuItem.Text = "Faculty Table";
-            // 
-            // logoutToolStripMenuItem
-            // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // HomePage
             // 

@@ -15,40 +15,41 @@ namespace SchoolServer2
     {
         static void Main(string[] args)
         {
-            try
+            while (true)
             {
-                IPAddress ipAd = IPAddress.Parse("192.168.1.114");
-                TcpListener myList = new TcpListener(ipAd, 8000);
-                
-                myList.Start();
+                try
+                {
+                    IPAddress ipAd = IPAddress.Parse("192.168.1.114");
+                    TcpListener myList = new TcpListener(ipAd, 8000);
 
-                Console.WriteLine("The server is running at port 8000...");
-                Console.WriteLine("The local End point is  :" +
-                                  myList.LocalEndpoint);
-                
-                Console.WriteLine("Waiting for a connection.....");
-                Socket s = myList.AcceptSocket();
-                Console.WriteLine("Connection accepted from " + s.RemoteEndPoint);
+                    myList.Start();
 
-                byte[] b = new byte[1000];
-                int k = s.Receive(b);
+                    Console.WriteLine("The server is running at port 8000...");
+                    Console.WriteLine("The local End point is  :" +
+                                      myList.LocalEndpoint);
 
-                Console.WriteLine("Recieved...");
-                Console.WriteLine(b.Length);
+                    Console.WriteLine("Waiting for a connection.....");
+                    Socket s = myList.AcceptSocket();
+                    Console.WriteLine("Connection accepted from " + s.RemoteEndPoint);
 
-                LoginObject info = ByteArrayToLoginObject(b);                         
+                    byte[] b = new byte[1000];
+                    int k = s.Receive(b);
+
+                    Console.WriteLine("Recieved...");
+                    Console.WriteLine(b.Length);
+
+                    LoginObject info = ByteArrayToLoginObject(b);
+
+                    s.Send(StringToByteArray(ValidateLogin.ValidateCredentials(info)));
+                    Console.WriteLine("\nSent Acknowledgement");
                     
-                s.Send(StringToByteArray(ValidateLogin.ValidateCredentials(info)));
-                Console.WriteLine("\nSent Acknowledgement");
-                Console.ReadLine();
-
-                s.Close();
-                myList.Stop();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error..... " + e.StackTrace);
-                Console.ReadLine();
+                    s.Close();
+                    myList.Stop();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error..... " + e.StackTrace);                    
+                }
             }
 
         }
