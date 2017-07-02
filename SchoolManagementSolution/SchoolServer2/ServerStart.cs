@@ -41,10 +41,9 @@ namespace SchoolServer2
                 s.Send(StringToByteArray(ValidateLogin.ValidateCredentials(info)));
                 Console.WriteLine("\nSent Acknowledgement");
                 Console.ReadLine();
+
                 s.Close();
                 myList.Stop();
-                
-
             }
             catch (Exception e)
             {
