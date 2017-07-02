@@ -37,13 +37,14 @@ namespace SchoolServer2
                     int k = s.Receive(b);
 
                     Console.WriteLine("Recieved...");
-                    Console.WriteLine(b.Length);
-                  
 
-                    LoginObject info = (LoginObject)ByteArrayToLoginObject(b);
+                    ObjectManager objectManager = new ObjectManager(s);
+                    objectManager.ObjectInstruction(b);
 
-                    s.Send(StringToByteArray(ValidateLogin.ValidateCredentials(info)));
-                    Console.WriteLine("\nSent Acknowledgement");
+                    //LoginObject info = (LoginObject)ByteArrayToLoginObject(b);
+
+                    //s.Send(StringToByteArray(ValidateLogin.ValidateCredentials(info)));
+                    //Console.WriteLine("\nSent Acknowledgement");
                     
                     s.Close();
                     myList.Stop();
