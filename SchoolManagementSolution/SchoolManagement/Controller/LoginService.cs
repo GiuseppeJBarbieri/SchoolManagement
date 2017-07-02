@@ -26,20 +26,13 @@ namespace SchoolManagement.Model
                 Stream stm = tcpclnt.GetStream();
 
                 byte[] ba = ObjectToByteArray(accInfo.username, accInfo.password);
-
-                MessageBox.Show("Transmitting.....");
+                              
                 stm.Write(ba, 0, ba.Length);
 
                 byte[] bb = new byte[100];
                 int k = stm.Read(bb, 0, 100);
-                String s = null;
-                StringBuilder sb = new StringBuilder(s);
-
-                for (int i = 0; i < k; i++)
-                   sb.Append(Convert.ToString(bb[i]));
-
-                MessageBox.Show(s);
-
+                
+                LoginVerify(ByteArrayToObject(bb));
                 tcpclnt.Close();
             }
             catch (Exception e)
@@ -49,12 +42,29 @@ namespace SchoolManagement.Model
             return false;            
         }
 
+        public static void LoginVerify(string valid)
+        {
+            if(valid == "true")
+            {
+                MessageBox.Show("Login sucess Welcome to Homepage ");
+                HomePage hp = new HomePage();
+                LoginForm.ActiveForm.Hide();
+                hp.Show();
+            }
+            else
+            {
+                MessageBox.Show("Login unsuccessful");
+
+            }
+
+        }
+
         public static byte[] ObjectToByteArray(string username, string password)
         {
             using (MemoryStream ms = new MemoryStream())
             {
                 BinaryWriter bw = new BinaryWriter(ms);
-                bw.Write("login");
+                
                 bw.Write(username);
                 bw.Write(password);
 
@@ -62,36 +72,22 @@ namespace SchoolManagement.Model
             }
         }
 
+        public static string ByteArrayToObject(byte[] buffer)
+        {
+            string retVal = null;
+
+            using (MemoryStream ms = new MemoryStream(buffer))
+            {
+                BinaryReader br = new BinaryReader(ms);
+                retVal = br.ReadString();              
+
+            }
+            return retVal;
+        }
+
         public void OnLoginHandled(object source, Object acc)
         {
-            CheckValid((LoginObject)acc);
-
-            /*
-            LoginObject account = (LoginObject)acc;
-
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Giuseppe\\Documents\\SchoolManagement\\SchoolManagementSolution\\SchoolManagement\\SchoolDatabase.mdf;Integrated Security=True";
-            con.Open();
-
-            SqlCommand cmd = new SqlCommand("select UserName,Password from LoginInformation where UserName='" + account.username + "'and Password='" + account.password + "'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
-            {
-                MessageBox.Show("Login sucess Welcome to Homepage ");
-                HomePage hp = new HomePage();
-                LoginForm.ActiveForm.Hide();
-                hp.Show();
-
-            }
-            else
-            {
-                MessageBox.Show("Invalid Login please check username and password");
-            }
-
-            con.Close();
-            */
+            CheckValid((LoginObject)acc);           
         }
         
     }

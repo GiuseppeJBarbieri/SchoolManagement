@@ -1,4 +1,5 @@
-﻿using SchoolServer2.Mangement;
+﻿using SchoolServer2.controller;
+using SchoolServer2.Mangement;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,43 +18,32 @@ namespace SchoolServer2
             try
             {
                 IPAddress ipAd = IPAddress.Parse("192.168.1.114");
-                // use local m/c IP address, and 
-                // use the same in the client
-
-                /* Initializes the Listener */
                 TcpListener myList = new TcpListener(ipAd, 8000);
-
-                /* Start Listeneting at the specified port */
+                
                 myList.Start();
 
                 Console.WriteLine("The server is running at port 8000...");
                 Console.WriteLine("The local End point is  :" +
                                   myList.LocalEndpoint);
+                
                 Console.WriteLine("Waiting for a connection.....");
+                Socket s = myList.AcceptSocket();
+                Console.WriteLine("Connection accepted from " + s.RemoteEndPoint);
 
-                while (true)
-                {
-                    Socket s = myList.AcceptSocket();
-                    Console.WriteLine("Connection accepted from " + s.RemoteEndPoint);
+                byte[] b = new byte[1000];
+                int k = s.Receive(b);
 
-                    byte[] b = new byte[1000];
-                    int k = s.Receive(b);
+                Console.WriteLine("Recieved...");
+                Console.WriteLine(b.Length);
 
-                    Console.WriteLine("Recieved...");
-                    Console.WriteLine(b.Length);
-
-                    LoginObject info = ByteArrayToObject(b);
-                    Console.WriteLine("UN :" + info.username);
+                LoginObject info = ByteArrayToLoginObject(b);                         
                     
-
-                    ASCIIEncoding asen = new ASCIIEncoding();
-                    s.Send(asen.GetBytes("The string was recieved by the server."));
-                    Console.WriteLine("\nSent Acknowledgement");
-                    /* clean up */
-                    Console.ReadLine();
-                    s.Close();
-                    myList.Stop();
-                }
+                s.Send(StringToByteArray(ValidateLogin.ValidateCredentials(info)));
+                Console.WriteLine("\nSent Acknowledgement");
+                Console.ReadLine();
+                s.Close();
+                myList.Stop();
+                
 
             }
             catch (Exception e)
@@ -64,19 +54,35 @@ namespace SchoolServer2
 
         }
 
-        public static LoginObject ByteArrayToObject(byte[] buffer)
+        public static LoginObject ByteArrayToLoginObject(byte[] buffer)
         {
             LoginObject retVal = new LoginObject();
 
             using (MemoryStream ms = new MemoryStream(buffer))
             {
                 BinaryReader br = new BinaryReader(ms);
-
                 retVal.username = br.ReadString();
                 retVal.password = br.ReadString();
 
             }
             return retVal;
+        }
+
+        public static byte[] StringToByteArray(bool valid)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                BinaryWriter bw = new BinaryWriter(ms);
+                if(valid == true)
+                {
+                    bw.Write("true");
+                }
+                else
+                {
+                    bw.Write("false");
+                }                
+                return ms.ToArray();
+            }
         }
     }
 }

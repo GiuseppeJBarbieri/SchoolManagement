@@ -42,40 +42,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="model\LoginObject.cs" />
-    <Compile Include="SchoolDatabaseDataSet.Designer.cs">
-      <DependentUpon>SchoolDatabaseDataSet.xsd</DependentUpon>
+    <Compile Include="controller\ValidateLogin.cs" />
+    <Compile Include="DatabaseForSchoolDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseForSchoolDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="model\LoginObject.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="ServerStart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="SchoolDatabaseDataSet.xsc">
-      <DependentUpon>SchoolDatabaseDataSet.xsd</DependentUpon>
+    <None Include="DatabaseForSchoolDataSet.xsc">
+      <DependentUpon>DatabaseForSchoolDataSet.xsd</DependentUpon>
     </None>
-    <None Include="SchoolDatabaseDataSet.xsd">
+    <None Include="DatabaseForSchoolDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SchoolDatabaseDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>DatabaseForSchoolDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="SchoolDatabaseDataSet.xss">
-      <DependentUpon>SchoolDatabaseDataSet.xsd</DependentUpon>
+    <None Include="DatabaseForSchoolDataSet.xss">
+      <DependentUpon>DatabaseForSchoolDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SchoolDatabase.mdf">
+    <Content Include="DatabaseForSchool.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="SchoolDatabase_log.ldf">
-      <DependentUpon>SchoolDatabase.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="controller\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
