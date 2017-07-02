@@ -30,17 +30,16 @@ namespace SchoolServer2.controller
                     LoginObject info = new LoginObject();
                     info.Username = br.ReadString();
                     info.Password = br.ReadString();
-                    socket.Send(StringToByteArray(ValidateLogin.ValidateCredentials(info)));
+                    socket.Send(StringToByteArrayForLogin(ValidateLogin.ValidateCredentials(info)));
                     Console.WriteLine("\nSent Acknowledgement");
 
                 }
 
             }
 
-
         }
 
-        public static byte[] StringToByteArray(bool valid)
+        public static byte[] StringToByteArrayForLogin(bool valid)
         {
             using (MemoryStream ms = new MemoryStream())
             {

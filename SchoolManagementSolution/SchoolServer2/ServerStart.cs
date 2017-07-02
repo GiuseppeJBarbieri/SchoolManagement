@@ -40,11 +40,6 @@ namespace SchoolServer2
 
                     ObjectManager objectManager = new ObjectManager(s);
                     objectManager.ObjectInstruction(b);
-
-                    //LoginObject info = (LoginObject)ByteArrayToLoginObject(b);
-
-                    //s.Send(StringToByteArray(ValidateLogin.ValidateCredentials(info)));
-                    //Console.WriteLine("\nSent Acknowledgement");
                     
                     s.Close();
                     myList.Stop();
@@ -54,58 +49,6 @@ namespace SchoolServer2
                     Console.WriteLine("Error..... " + e.StackTrace);                    
                 }
             }
-
-        }
-
-        public static object ByteArrayToLoginObject(byte[] buffer)
-        {
-            LoginObject retVal = new LoginObject();
-
-            using (MemoryStream ms = new MemoryStream(buffer))
-            {
-                BinaryReader br = new BinaryReader(ms);
-                string instruct = br.ReadString();                
-
-                if (instruct == "Login")
-                {                   
-                    retVal.Username = br.ReadString();
-                    retVal.Password = br.ReadString();
-                } 
-
-            }
-            return retVal;
-        }
-
-        public static string FindNameOfClass(byte[] buffer)
-        {
-            
-           
-
-            using (MemoryStream ms = new MemoryStream(buffer))
-            {
-                BinaryFormatter bf = new BinaryFormatter();
-                object obj = bf.Deserialize(ms);
-                return obj.GetType().Name;
-            }
-
-            
-        }
-
-        public static byte[] StringToByteArray(bool valid)
-        {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                BinaryWriter bw = new BinaryWriter(ms);
-                if(valid == true)
-                {
-                    bw.Write("true");
-                }
-                else
-                {
-                    bw.Write("false");
-                }                
-                return ms.ToArray();
-            }
-        }
+        }                  
     }
 }
