@@ -64,10 +64,11 @@ namespace SchoolManagement.Model
             using (MemoryStream ms = new MemoryStream())
             {
                 BinaryWriter bw = new BinaryWriter(ms);
-                
-                bw.Write(username);
-                bw.Write(password);
 
+                bw.Write("Login");
+                bw.Write(username);
+                bw.Write(password);                
+                
                 return ms.ToArray();
             }
         }

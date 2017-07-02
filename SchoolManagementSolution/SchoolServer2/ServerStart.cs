@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,8 +38,9 @@ namespace SchoolServer2
 
                     Console.WriteLine("Recieved...");
                     Console.WriteLine(b.Length);
+                  
 
-                    LoginObject info = ByteArrayToLoginObject(b);
+                    LoginObject info = (LoginObject)ByteArrayToLoginObject(b);
 
                     s.Send(StringToByteArray(ValidateLogin.ValidateCredentials(info)));
                     Console.WriteLine("\nSent Acknowledgement");
@@ -54,18 +56,38 @@ namespace SchoolServer2
 
         }
 
-        public static LoginObject ByteArrayToLoginObject(byte[] buffer)
+        public static object ByteArrayToLoginObject(byte[] buffer)
         {
             LoginObject retVal = new LoginObject();
 
             using (MemoryStream ms = new MemoryStream(buffer))
             {
                 BinaryReader br = new BinaryReader(ms);
-                retVal.Username = br.ReadString();
-                retVal.Password = br.ReadString();
+                string instruct = br.ReadString();                
+
+                if (instruct == "Login")
+                {                   
+                    retVal.Username = br.ReadString();
+                    retVal.Password = br.ReadString();
+                } 
 
             }
             return retVal;
+        }
+
+        public static string FindNameOfClass(byte[] buffer)
+        {
+            
+           
+
+            using (MemoryStream ms = new MemoryStream(buffer))
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                object obj = bf.Deserialize(ms);
+                return obj.GetType().Name;
+            }
+
+            
         }
 
         public static byte[] StringToByteArray(bool valid)
