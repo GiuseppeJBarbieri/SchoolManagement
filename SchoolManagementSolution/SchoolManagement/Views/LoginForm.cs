@@ -24,9 +24,7 @@ namespace SchoolManagement
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'schoolDatabaseDataSet.LoginInformation' table. You can move, or remove it, as needed.
-            this.loginInformationTableAdapter.Fill(this.schoolDatabaseDataSet.LoginInformation);
+        {           
             server = new SchoolServerController();
             loginService = new LoginService();
 

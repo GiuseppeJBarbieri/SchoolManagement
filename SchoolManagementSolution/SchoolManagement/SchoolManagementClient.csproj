@@ -61,13 +61,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\SchoolServerController.cs" />
+    <Compile Include="Model\ClassListObject.cs" />
     <Compile Include="Model\LoginObject.cs" />
     <Compile Include="Controller\LoginService.cs" />
-    <Compile Include="SchoolDatabaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SchoolDatabaseDataSet.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="Model\StudentObject.cs" />
     <Compile Include="Views\HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,29 +112,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SchoolDatabaseDataSet.xsc">
-      <DependentUpon>SchoolDatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="SchoolDatabaseDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SchoolDatabaseDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="SchoolDatabaseDataSet.xss">
-      <DependentUpon>SchoolDatabaseDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SchoolDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SchoolDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>SchoolDatabase.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

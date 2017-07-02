@@ -48,7 +48,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseForSchoolDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="model\ClassListObject.cs" />
     <Compile Include="model\LoginObject.cs" />
+    <Compile Include="model\StudentObject.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -77,6 +79,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DatabaseForSchool.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DatabaseForSchool_log.ldf">
+      <DependentUpon>DatabaseForSchool.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

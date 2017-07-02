@@ -22,8 +22,7 @@ namespace SchoolManagement.Controller
         public event VerifyLoginHandler LoginHandled;
 
         public void VerifyLogin(Object acc)
-        {
-            MessageBox.Show("Verifying Credentials");
+        {            
             OnLoginHandled(acc);
         }
 

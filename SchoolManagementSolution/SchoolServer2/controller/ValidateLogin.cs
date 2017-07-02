@@ -22,7 +22,7 @@ namespace SchoolServer2.controller
                 "C:\\Users\\Giuseppe\\Documents\\SchoolManagement\\SchoolManagementSolution\\SchoolServer2\\DatabaseForSchool.mdf;Integrated Security=True";
 
             con.Open();
-            SqlCommand cmd = new SqlCommand("select username,password from loginInfo where username='" + acc.username + "'and password='" + acc.password + "'", con);
+            SqlCommand cmd = new SqlCommand("select username,password from loginInfo where username='" + acc.Username + "'and password='" + acc.Password + "'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);

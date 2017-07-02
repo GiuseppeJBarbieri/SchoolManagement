@@ -60,8 +60,8 @@ namespace SchoolServer2
             using (MemoryStream ms = new MemoryStream(buffer))
             {
                 BinaryReader br = new BinaryReader(ms);
-                retVal.username = br.ReadString();
-                retVal.password = br.ReadString();
+                retVal.Username = br.ReadString();
+                retVal.Password = br.ReadString();
 
             }
             return retVal;

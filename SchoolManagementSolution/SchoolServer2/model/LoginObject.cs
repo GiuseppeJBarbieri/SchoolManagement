@@ -8,13 +8,13 @@ namespace SchoolServer2.Mangement
 {
     class LoginObject
     {
-        public string username { get; set; }
-        public string password { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
 
         public LoginObject(string username, string password)
         {
-            this.username = username;
-            this.password = password;
+            this.Username = username;
+            this.Password = password;
         }
 
         public LoginObject()
