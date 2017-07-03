@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SchoolManagement.Controller
 {
-    class SchoolServerController
+    class LoginDelegateController
     {
         //1-define delegate
         //2-define an event based on that delegate

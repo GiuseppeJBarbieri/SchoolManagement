@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolManagement.Model
+namespace SchoolManagement.Model_StudentInformation
 {
     class StudentObject
     {
         public string Firstname { get; set; }
         public string Lastname { get; set; }
-        public int Grade { get; set; }
-        public int Age { get; set; }
+        public string Grade { get; set; }
+        public string Age { get; set; }
         public string Gender { get; set; }
-        public int Gpa { get; set; }
-        public int ClassId { get; set; }
+        public string Gpa { get; set; }
+       
 
-        public StudentObject(string firstname, string lastname, int grade, int age,
-            string gender, int gpa, int classId)
+        public StudentObject(string firstname, string lastname, string grade, string age,
+            string gender, string gpa)
         {
             this.Firstname = firstname;
             this.Lastname = lastname;
@@ -25,7 +25,7 @@ namespace SchoolManagement.Model
             this.Age = age;
             this.Gender = gender;
             this.Gpa = gpa;
-            this.ClassId = classId;
+            
         }
 
         public StudentObject()

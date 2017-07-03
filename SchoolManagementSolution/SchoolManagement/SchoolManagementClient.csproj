@@ -60,11 +60,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\SchoolServerController.cs" />
-    <Compile Include="Model\ClassListObject.cs" />
-    <Compile Include="Model\LoginObject.cs" />
-    <Compile Include="Controller\LoginService.cs" />
-    <Compile Include="Model\StudentObject.cs" />
+    <Compile Include="Controller_AddStuInfo\AddStudentInfo.cs" />
+    <Compile Include="Controller_Login\LoginDelegateController.cs" />
+    <Compile Include="Model_StudentInformation\ClassListObject.cs" />
+    <Compile Include="Model_LoginObject\LoginObject.cs" />
+    <Compile Include="Controller_Login\LoginService.cs" />
+    <Compile Include="Model_StudentInformation\StudentObject.cs" />
+    <Compile Include="Views\AddStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddStudentForm.Designer.cs">
+      <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FacultyTableViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FacultyTableViewForm.Designer.cs">
+      <DependentUpon>FacultyTableViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +107,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\AddStudentForm.resx">
+      <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FacultyTableViewForm.resx">
+      <DependentUpon>FacultyTableViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>

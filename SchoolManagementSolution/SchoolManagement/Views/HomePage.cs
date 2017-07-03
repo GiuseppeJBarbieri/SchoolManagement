@@ -21,6 +21,7 @@ namespace SchoolManagement.Views
         {
             StudentTableViewForm stvf = new StudentTableViewForm();
             stvf.Show();
+
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -28,6 +29,18 @@ namespace SchoolManagement.Views
             this.Close();
             LoginForm lf = new LoginForm();
             lf.Show();
+        }
+
+        private void facultyTableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FacultyTableViewForm ftvf = new FacultyTableViewForm();
+            ftvf.Show();
+        }
+
+        private void studentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddStudentForm asf = new AddStudentForm();
+            asf.Show();
         }
     }
 }

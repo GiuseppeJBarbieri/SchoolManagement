@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controller\AddStudent.cs" />
     <Compile Include="controller\ObjectManager.cs" />
     <Compile Include="controller\ValidateLogin.cs" />
     <Compile Include="DatabaseForSchoolDataSet.Designer.cs">

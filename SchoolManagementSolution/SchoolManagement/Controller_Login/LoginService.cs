@@ -1,4 +1,5 @@
-﻿using SchoolManagement.Views;
+﻿using SchoolManagement.Model_LoginObject;
+using SchoolManagement.Views;
 using System;
 using System.Collections.Generic;
 using System.Data;

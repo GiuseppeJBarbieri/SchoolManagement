@@ -32,12 +32,13 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.studentTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.facultyTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facultyMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facultyTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoLbl = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,8 @@
             this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(741, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(10, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(713, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -58,13 +60,13 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logoutToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 19);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -73,30 +75,8 @@
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 19);
             this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.studentTableToolStripMenuItem,
-            this.facultyTableToolStripMenuItem});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem.Text = "View";
-            // 
-            // studentTableToolStripMenuItem
-            // 
-            this.studentTableToolStripMenuItem.Name = "studentTableToolStripMenuItem";
-            this.studentTableToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.studentTableToolStripMenuItem.Text = "Student Table";
-            this.studentTableToolStripMenuItem.Click += new System.EventHandler(this.studentTableToolStripMenuItem_Click);
-            // 
-            // facultyTableToolStripMenuItem
-            // 
-            this.facultyTableToolStripMenuItem.Name = "facultyTableToolStripMenuItem";
-            this.facultyTableToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.facultyTableToolStripMenuItem.Text = "Faculty Table";
             // 
             // addToolStripMenuItem
             // 
@@ -112,6 +92,7 @@
             this.studentToolStripMenuItem.Name = "studentToolStripMenuItem";
             this.studentToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.studentToolStripMenuItem.Text = "Student";
+            this.studentToolStripMenuItem.Click += new System.EventHandler(this.studentToolStripMenuItem_Click);
             // 
             // facultyMemberToolStripMenuItem
             // 
@@ -119,13 +100,48 @@
             this.facultyMemberToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.facultyMemberToolStripMenuItem.Text = "Faculty member";
             // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.studentTableToolStripMenuItem,
+            this.facultyTableToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 19);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // studentTableToolStripMenuItem
+            // 
+            this.studentTableToolStripMenuItem.Name = "studentTableToolStripMenuItem";
+            this.studentTableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.studentTableToolStripMenuItem.Text = "Student Table";
+            this.studentTableToolStripMenuItem.Click += new System.EventHandler(this.studentTableToolStripMenuItem_Click);
+            // 
+            // facultyTableToolStripMenuItem
+            // 
+            this.facultyTableToolStripMenuItem.Name = "facultyTableToolStripMenuItem";
+            this.facultyTableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.facultyTableToolStripMenuItem.Text = "Faculty Table";
+            this.facultyTableToolStripMenuItem.Click += new System.EventHandler(this.facultyTableToolStripMenuItem_Click);
+            // 
+            // infoLbl
+            // 
+            this.infoLbl.AutoSize = true;
+            this.infoLbl.Location = new System.Drawing.Point(107, 111);
+            this.infoLbl.Name = "infoLbl";
+            this.infoLbl.Size = new System.Drawing.Size(499, 18);
+            this.infoLbl.TabIndex = 1;
+            this.infoLbl.Text = "Please use the tabs above to navigate through the application";
+            // 
             // HomePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 463);
+            this.ClientSize = new System.Drawing.Size(713, 229);
+            this.Controls.Add(this.infoLbl);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "HomePage";
             this.Text = "HomePage";
             this.menuStrip1.ResumeLayout(false);
@@ -147,5 +163,6 @@
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem studentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem facultyMemberToolStripMenuItem;
+        private System.Windows.Forms.Label infoLbl;
     }
 }

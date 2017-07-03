@@ -1,5 +1,6 @@
 ﻿using SchoolManagement.Controller;
 using SchoolManagement.Model;
+using SchoolManagement.Model_LoginObject;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace SchoolManagement
     
     public partial class LoginForm : Form
     {
-        private SchoolServerController server;
+        private LoginDelegateController server;
         private LoginService loginService;
 
         public LoginForm()
@@ -25,7 +26,7 @@ namespace SchoolManagement
 
         private void LoginForm_Load(object sender, EventArgs e)
         {           
-            server = new SchoolServerController();
+            server = new LoginDelegateController();
             loginService = new LoginService();
 
             server.LoginHandled += loginService.OnLoginHandled;

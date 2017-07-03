@@ -1,4 +1,5 @@
-﻿
+﻿using SchoolManagement.Controller_AddStuInfo;
+using SchoolManagement.Model_StudentInformation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,27 +13,17 @@ using System.Windows.Forms;
 
 namespace SchoolManagement.Views
 {
-    public partial class StudentTableViewForm : Form
+    public partial class AddStudentForm : Form
     {
-        public StudentTableViewForm()
+        public AddStudentForm()
         {
             InitializeComponent();
             LoadStudentInfo();
         }
 
-        private void StudentTableViewForm_Load(object sender, EventArgs e)
-        {
-          
-        }
-
         private void backBtn_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void loadStudentInfoBtn_Click(object sender, EventArgs e)
-        {            
-            
         }
 
         private void LoadStudentInfo()
@@ -46,8 +37,16 @@ namespace SchoolManagement.Views
             connection.Open();
             dataadapter.Fill(ds, "Student_table");
             connection.Close();
-            StudentTableGrid.DataSource = ds;
-            StudentTableGrid.DataMember = "Student_table";
+            studentGridView.DataSource = ds;
+            studentGridView.DataMember = "Student_table";
+        }
+
+        private void addStuBtn_Click(object sender, EventArgs e)
+        {
+            StudentObject student = new StudentObject(firstNameTxt.Text, lastNameTxt.Text, gradeTxt.Text, ageTxt.Text, genderTxt.Text, gpaTxt.Text);
+            AddStudentInfo.AddStudentInfoToDB(student);
+            
+            LoadStudentInfo();
         }
     }
 }

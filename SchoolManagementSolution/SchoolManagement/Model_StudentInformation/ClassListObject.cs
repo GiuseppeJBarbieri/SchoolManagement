@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolManagement.Model
+namespace SchoolManagement.Model_StudentInformation
 {
     class ClassListObject
     {

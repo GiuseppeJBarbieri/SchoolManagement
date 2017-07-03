@@ -1,4 +1,5 @@
 ﻿using SchoolServer2.Mangement;
+using SchoolServer2.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -32,6 +33,18 @@ namespace SchoolServer2.controller
                     info.Password = br.ReadString();
                     socket.Send(StringToByteArrayForLogin(ValidateLogin.ValidateCredentials(info)));
                     Console.WriteLine("\nSent Acknowledgement");
+
+                }
+                else if(instruct == "Add To Student Database")
+                {
+                    StudentObject student = new StudentObject();
+                    student.Firstname = br.ReadString();
+                    student.Lastname = br.ReadString();
+                    student.Grade = br.ReadString();
+                    student.Age = br.ReadString();
+                    student.Gender = br.ReadString();
+                    student.Gpa = br.ReadString();
+                    socket.Send(StringToByteArrayForLogin(AddStudent.AddStuTODB(student)));
 
                 }
 
