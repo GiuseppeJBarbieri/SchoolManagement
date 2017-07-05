@@ -112,6 +112,7 @@
             this.firstNameTxt.Name = "firstNameTxt";
             this.firstNameTxt.Size = new System.Drawing.Size(164, 26);
             this.firstNameTxt.TabIndex = 5;
+            this.firstNameTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lastNameTxt
             // 
@@ -120,6 +121,7 @@
             this.lastNameTxt.Name = "lastNameTxt";
             this.lastNameTxt.Size = new System.Drawing.Size(164, 26);
             this.lastNameTxt.TabIndex = 6;
+            this.lastNameTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ageTxt
             // 
@@ -128,6 +130,7 @@
             this.ageTxt.Name = "ageTxt";
             this.ageTxt.Size = new System.Drawing.Size(164, 26);
             this.ageTxt.TabIndex = 7;
+            this.ageTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // genderTxt
             // 
@@ -136,6 +139,7 @@
             this.genderTxt.Name = "genderTxt";
             this.genderTxt.Size = new System.Drawing.Size(164, 26);
             this.genderTxt.TabIndex = 8;
+            this.genderTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // classTxt
             // 
@@ -144,6 +148,7 @@
             this.classTxt.Name = "classTxt";
             this.classTxt.Size = new System.Drawing.Size(164, 26);
             this.classTxt.TabIndex = 9;
+            this.classTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // backBtn
             // 

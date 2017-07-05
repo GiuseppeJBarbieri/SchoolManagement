@@ -55,6 +55,7 @@
             this.usernameTxt.Name = "usernameTxt";
             this.usernameTxt.Size = new System.Drawing.Size(159, 26);
             this.usernameTxt.TabIndex = 2;
+            this.usernameTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // passwordTxt
             // 
@@ -62,6 +63,8 @@
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.Size = new System.Drawing.Size(159, 26);
             this.passwordTxt.TabIndex = 3;
+            this.passwordTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.passwordTxt.UseSystemPasswordChar = true;
             // 
             // loginBtn
             // 
