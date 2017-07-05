@@ -60,12 +60,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller_AddStuInfo\AddFacultyInfo.cs" />
     <Compile Include="Controller_AddStuInfo\AddStudentInfo.cs" />
     <Compile Include="Controller_Login\LoginDelegateController.cs" />
     <Compile Include="Model_StudentInformation\ClassListObject.cs" />
     <Compile Include="Model_LoginObject\LoginObject.cs" />
     <Compile Include="Controller_Login\LoginService.cs" />
+    <Compile Include="Model_StudentInformation\FacultyObject.cs" />
     <Compile Include="Model_StudentInformation\StudentObject.cs" />
+    <Compile Include="Views\AddFacultyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddFacultyForm.Designer.cs">
+      <DependentUpon>AddFacultyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +115,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\AddFacultyForm.resx">
+      <DependentUpon>AddFacultyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\AddStudentForm.resx">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
     </EmbeddedResource>

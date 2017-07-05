@@ -38,6 +38,9 @@ namespace SchoolManagement
             server.VerifyLogin(new LoginObject(usernameTxt.Text, passwordTxt.Text));
         }
 
-       
+        private void loginLbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -47,6 +47,18 @@ namespace SchoolServer2.controller
                     socket.Send(StringToByteArrayForLogin(AddStudent.AddStuTODB(student)));
 
                 }
+                else if (instruct == "Add To Faculty Database")
+                {
+                    
+                    FacultyObject faculty = new FacultyObject();
+                    faculty.Firstname = br.ReadString();
+                    faculty.Lastname = br.ReadString();                    
+                    faculty.Age = br.ReadString();
+                    faculty.Gender = br.ReadString();
+                    faculty.Class = br.ReadString();
+                    socket.Send(StringToByteArrayForLogin(AddFaculty.AddFacTODB(faculty)));
+
+                }
 
             }
 

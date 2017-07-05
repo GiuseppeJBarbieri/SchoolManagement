@@ -13,45 +13,45 @@ using System.Windows.Forms;
 
 namespace SchoolManagement.Views
 {
-    public partial class AddStudentForm : Form
+    public partial class AddFacultyForm : Form
     {
-        public AddStudentForm()
+        public AddFacultyForm()
         {
             InitializeComponent();
-            LoadStudentInfo();
+            LoadFacultyInfo();
         }
 
-        private void backBtn_Click(object sender, EventArgs e)
+        private void AddFacultyForm_Load(object sender, EventArgs e)
         {
-            this.Close();
+
         }
 
-        private void LoadStudentInfo()
+        private void LoadFacultyInfo()
         {
             string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" +
                 "C:\\Users\\Giuseppe\\Documents\\SchoolManagement\\SchoolManagementSolution\\SchoolServer2\\DatabaseForSchool.mdf;Integrated Security=True";
-            string sql = "SELECT * FROM Students";
+            string sql = "SELECT * FROM Faculty";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter(sql, connection);
             DataSet ds = new DataSet();
             connection.Open();
-            dataadapter.Fill(ds, "Student_table");
+            dataadapter.Fill(ds, "Faculty_table");
             connection.Close();
-            studentGridView.DataSource = ds;
-            studentGridView.DataMember = "Student_table";
+            facultyGridView.DataSource = ds;
+            facultyGridView.DataMember = "Faculty_table";
         }
 
-        private void addStuBtn_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            StudentObject student = new StudentObject(firstNameTxt.Text, lastNameTxt.Text, gradeTxt.Text, ageTxt.Text, genderTxt.Text, gpaTxt.Text);
-            AddStudentInfo.AddStudentInfoToDB(student);
-            
-            LoadStudentInfo();
+            this.Close();
         }
 
-        private void AddStudentForm_Load(object sender, EventArgs e)
+        private void addFacBtn_Click(object sender, EventArgs e)
         {
+            FacultyObject faculty = new FacultyObject(firstNameTxt.Text, lastNameTxt.Text, ageTxt.Text, genderTxt.Text, classTxt.Text);
+            AddFacultyInfo.AddFacultyInfoToDB(faculty);
 
+            LoadFacultyInfo();
         }
     }
 }

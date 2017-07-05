@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controller\AddFaculty.cs" />
     <Compile Include="controller\AddStudent.cs" />
     <Compile Include="controller\ObjectManager.cs" />
     <Compile Include="controller\ValidateLogin.cs" />
@@ -50,7 +51,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DatabaseForSchoolDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="model\ClassListObject.cs" />
+    <Compile Include="model\FacultyObject.cs" />
     <Compile Include="model\LoginObject.cs" />
     <Compile Include="model\StudentObject.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

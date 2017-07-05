@@ -99,6 +99,7 @@
             this.facultyMemberToolStripMenuItem.Name = "facultyMemberToolStripMenuItem";
             this.facultyMemberToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.facultyMemberToolStripMenuItem.Text = "Faculty member";
+            this.facultyMemberToolStripMenuItem.Click += new System.EventHandler(this.facultyMemberToolStripMenuItem_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -112,14 +113,14 @@
             // studentTableToolStripMenuItem
             // 
             this.studentTableToolStripMenuItem.Name = "studentTableToolStripMenuItem";
-            this.studentTableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.studentTableToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.studentTableToolStripMenuItem.Text = "Student Table";
             this.studentTableToolStripMenuItem.Click += new System.EventHandler(this.studentTableToolStripMenuItem_Click);
             // 
             // facultyTableToolStripMenuItem
             // 
             this.facultyTableToolStripMenuItem.Name = "facultyTableToolStripMenuItem";
-            this.facultyTableToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.facultyTableToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.facultyTableToolStripMenuItem.Text = "Faculty Table";
             this.facultyTableToolStripMenuItem.Click += new System.EventHandler(this.facultyTableToolStripMenuItem_Click);
             // 

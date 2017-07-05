@@ -42,5 +42,11 @@ namespace SchoolManagement.Views
             AddStudentForm asf = new AddStudentForm();
             asf.Show();
         }
+
+        private void facultyMemberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddFacultyForm aff = new AddFacultyForm();
+            aff.Show();
+        }
     }
 }
