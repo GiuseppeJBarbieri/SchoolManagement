@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddFacultyForm));
             this.firstNameLbl = new System.Windows.Forms.Label();
             this.lastNameLbl = new System.Windows.Forms.Label();
             this.ageLbl = new System.Windows.Forms.Label();
@@ -47,6 +48,8 @@
             // firstNameLbl
             // 
             this.firstNameLbl.AutoSize = true;
+            this.firstNameLbl.BackColor = System.Drawing.Color.Transparent;
+            this.firstNameLbl.ForeColor = System.Drawing.Color.White;
             this.firstNameLbl.Location = new System.Drawing.Point(53, 101);
             this.firstNameLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.firstNameLbl.Name = "firstNameLbl";
@@ -57,6 +60,8 @@
             // lastNameLbl
             // 
             this.lastNameLbl.AutoSize = true;
+            this.lastNameLbl.BackColor = System.Drawing.Color.Transparent;
+            this.lastNameLbl.ForeColor = System.Drawing.Color.White;
             this.lastNameLbl.Location = new System.Drawing.Point(53, 158);
             this.lastNameLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lastNameLbl.Name = "lastNameLbl";
@@ -67,6 +72,8 @@
             // ageLbl
             // 
             this.ageLbl.AutoSize = true;
+            this.ageLbl.BackColor = System.Drawing.Color.Transparent;
+            this.ageLbl.ForeColor = System.Drawing.Color.White;
             this.ageLbl.Location = new System.Drawing.Point(53, 226);
             this.ageLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ageLbl.Name = "ageLbl";
@@ -77,6 +84,8 @@
             // genderLbl
             // 
             this.genderLbl.AutoSize = true;
+            this.genderLbl.BackColor = System.Drawing.Color.Transparent;
+            this.genderLbl.ForeColor = System.Drawing.Color.White;
             this.genderLbl.Location = new System.Drawing.Point(53, 288);
             this.genderLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.genderLbl.Name = "genderLbl";
@@ -87,6 +96,8 @@
             // classLbl
             // 
             this.classLbl.AutoSize = true;
+            this.classLbl.BackColor = System.Drawing.Color.Transparent;
+            this.classLbl.ForeColor = System.Drawing.Color.White;
             this.classLbl.Location = new System.Drawing.Point(53, 353);
             this.classLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.classLbl.Name = "classLbl";
@@ -168,6 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(958, 504);
             this.Controls.Add(this.addFacBtn);
             this.Controls.Add(this.facultyGridView);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddStudentForm));
             this.fnLbl = new System.Windows.Forms.Label();
             this.firstNameTxt = new System.Windows.Forms.TextBox();
             this.lastNameTxt = new System.Windows.Forms.TextBox();
@@ -49,6 +50,8 @@
             // fnLbl
             // 
             this.fnLbl.AutoSize = true;
+            this.fnLbl.BackColor = System.Drawing.Color.Transparent;
+            this.fnLbl.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.fnLbl.Location = new System.Drawing.Point(22, 42);
             this.fnLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.fnLbl.Name = "fnLbl";
@@ -77,6 +80,8 @@
             // lnLbl
             // 
             this.lnLbl.AutoSize = true;
+            this.lnLbl.BackColor = System.Drawing.Color.Transparent;
+            this.lnLbl.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.lnLbl.Location = new System.Drawing.Point(22, 102);
             this.lnLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lnLbl.Name = "lnLbl";
@@ -96,6 +101,8 @@
             // gradeLbl
             // 
             this.gradeLbl.AutoSize = true;
+            this.gradeLbl.BackColor = System.Drawing.Color.Transparent;
+            this.gradeLbl.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.gradeLbl.Location = new System.Drawing.Point(22, 155);
             this.gradeLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.gradeLbl.Name = "gradeLbl";
@@ -115,6 +122,8 @@
             // ageLbl
             // 
             this.ageLbl.AutoSize = true;
+            this.ageLbl.BackColor = System.Drawing.Color.Transparent;
+            this.ageLbl.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.ageLbl.Location = new System.Drawing.Point(22, 209);
             this.ageLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.ageLbl.Name = "ageLbl";
@@ -125,6 +134,8 @@
             // genderLbl
             // 
             this.genderLbl.AutoSize = true;
+            this.genderLbl.BackColor = System.Drawing.Color.Transparent;
+            this.genderLbl.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.genderLbl.Location = new System.Drawing.Point(22, 259);
             this.genderLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.genderLbl.Name = "genderLbl";
@@ -144,6 +155,8 @@
             // gpaLbl
             // 
             this.gpaLbl.AutoSize = true;
+            this.gpaLbl.BackColor = System.Drawing.Color.Transparent;
+            this.gpaLbl.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.gpaLbl.Location = new System.Drawing.Point(22, 318);
             this.gpaLbl.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.gpaLbl.Name = "gpaLbl";
@@ -198,6 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1140, 469);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.studentGridView);

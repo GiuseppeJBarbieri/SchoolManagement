@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +45,8 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.DarkGray;
+            this.menuStrip1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
@@ -51,7 +54,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(10, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(713, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(817, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -74,8 +77,9 @@
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem});
+            this.editToolStripMenuItem.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 19);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(48, 22);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // addToolStripMenuItem
@@ -127,9 +131,12 @@
             // infoLbl
             // 
             this.infoLbl.AutoSize = true;
-            this.infoLbl.Location = new System.Drawing.Point(107, 111);
+            this.infoLbl.BackColor = System.Drawing.Color.Transparent;
+            this.infoLbl.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.infoLbl.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.infoLbl.Location = new System.Drawing.Point(57, 104);
             this.infoLbl.Name = "infoLbl";
-            this.infoLbl.Size = new System.Drawing.Size(499, 18);
+            this.infoLbl.Size = new System.Drawing.Size(717, 28);
             this.infoLbl.TabIndex = 1;
             this.infoLbl.Text = "Please use the tabs above to navigate through the application";
             // 
@@ -137,7 +144,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 229);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(817, 314);
             this.Controls.Add(this.infoLbl);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
